@@ -1,0 +1,67 @@
+/*
+Name: Natasha Foreman
+Course: CSD 440 – Server Side Scripting
+Date: April 5th, 2026
+Assignment: Module 3
+Purpose: Write a function that will be used to generate the value to be displayed in each cell.
+*/
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Natasha Table3</title>
+    <style>
+        table {
+            border-collapse: collapse;
+            margin: 20px auto;
+        }
+        td {
+            border: 1px solid black;
+            width: 80px;
+            height: 50px;
+            text-align: center;
+            vertical-align: middle;
+            font-size: 18px;
+        }
+        h1 {
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Random Number Sum Table</h1>
+
+    <?php
+    // The external file containing the function
+    require_once 'tableFunctions.php';
+    ?>
+
+    <table>
+        <?php
+        // Outer loop for rows
+        for ($row = 1; $row <= 5; $row++) {
+            echo "<tr>";
+
+            // Inner loop for columns
+            for ($col = 1; $col <= 5; $col++) {
+                // Generate two random numbers
+                $num1 = rand(1, 50);
+                $num2 = rand(1, 50);
+
+                // Call the function and store the returned sum
+                $sum = calculateSum($num1, $num2);
+
+                // Display the sum in the table cell
+                echo "<td>$sum</td>";
+            }
+
+            echo "</tr>";
+        }
+        ?>
+    </table>
+
+</body>
+</html>}

@@ -1,0 +1,18 @@
+/*
+Name: Natasha Foreman
+Course: CSD 440 – Server Side Scripting
+Date: April 5th, 2026
+Assignment: Module 3
+Purpose: Accepts two random numbers as parameters and returns their sum.
+*/
+
+<?php
+/**
+ * @param int $num1 The first random number
+ * @param int $num2 The second random number
+ * @return int The sum of the two numbers
+ */
+function calculateSum($num1, $num2) {
+    return $num1 + $num2;
+}
+?>
